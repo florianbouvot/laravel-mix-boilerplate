@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+// Base
+@tailwind base;
+@import "base/font-face";
+
+// Components
+@tailwind components;
+@import "components/icon";
+@import "baguettebox.js/dist/baguetteBox.min.css";
+
+// Utilities
+@tailwind utilities;
