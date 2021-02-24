@@ -21,6 +21,8 @@ A boilerplate for building web projects with Laravel Mix.
 * Web server (Browsersync)
   * Watch files changes, inject style, browser auto-refresh and cross-device synchronization
 
+_Nunjunks templates are only present for the demo._
+
 ## Getting Started
 
 ### Prerequisites

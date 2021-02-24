@@ -2,7 +2,7 @@ const mix = require('laravel-mix');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-require('laravel-mix-nunjucks');
+require('laravel-mix-nunjucks')
 
 mix
   .setPublicPath('dist/')
@@ -21,7 +21,9 @@ mix
   });
 
 mix.copy('src/fonts/**/*.{woff,woff2}', 'dist/fonts');
-mix.njk('src/templates/*.html', 'dist/');
+
+mix.njk('src/templates/', 'dist/');
+
 
 mix.webpackConfig({
   plugins: [
