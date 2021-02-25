@@ -13,8 +13,6 @@ mix
   .browserSync({
     server: 'dist/',
     files: [
-      'src/css/**/*.scss',
-      'src/js/**/*.js',
       'src/templates/**/*.html',
       'tailwind.config.js',
     ],
@@ -23,7 +21,6 @@ mix
 mix.copy('src/fonts/**/*.{woff,woff2}', 'dist/fonts');
 
 mix.njk('src/templates/', 'dist/');
-
 
 mix.webpackConfig({
   plugins: [
