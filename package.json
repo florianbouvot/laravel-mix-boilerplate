@@ -23,6 +23,7 @@
     "imagemin-pngquant": "^9.0.1",
     "imagemin-svgo": "^8.0.0",
     "laravel-mix": "^6.0.13",
+    "laravel-mix-copy-watched": "^2.3.0",
     "laravel-mix-nunjucks": "^1.0.0",
     "postcss": "^8.2.6",
     "sass": "^1.32.8",
