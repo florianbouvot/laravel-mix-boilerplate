@@ -25,11 +25,6 @@ _Nunjunks templates are only present for the demo._
 
 ## Getting Started
 
-### Prerequisites
-
-Make sure these are installed first:
-* [Node.js](https://nodejs.org/)
-
 ### Quick Start
 
 1. Clone repository
