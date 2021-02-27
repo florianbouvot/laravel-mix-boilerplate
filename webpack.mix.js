@@ -1,15 +1,19 @@
-const mix = require('laravel-mix');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
-const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-require('laravel-mix-copy-watched');
+const mix = require('laravel-mix')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin')
+require('laravel-mix-copy-watched')
 require('laravel-mix-nunjucks')
 
 mix
   .setPublicPath('dist/')
   .js(['src/js/app.js'], 'js')
-  .sass('src/css/app.scss', 'css').options({
-    processCssUrls: false
+  .sass('src/css/app.scss', 'css')
+  .options({
+    processCssUrls: false,
+    terser: {
+      extractComments: false, // Stop Mix from generating license file
+    }
   })
   .copyWatched('src/fonts/**/*.{woff,woff2}', 'dist/fonts')
   .webpackConfig({
@@ -29,6 +33,13 @@ mix
 if (mix.inProduction()) {
   mix
     .version()
+    .then(() => {
+      const convertToFileHash = require('laravel-mix-make-file-hash')
+      convertToFileHash({
+        publicPath: "dist/",
+        manifestFilePath: "dist/mix-manifest.json"
+      })
+    })
     .webpackConfig({
       module: {
         rules: [
