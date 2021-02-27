@@ -37,7 +37,7 @@ Make sure these are installed first:
 3. Use Mix CLI:
   * Compiling in a Local Environment `npx mix`
   * Watch Assets for changes `npx mix watch`
-  * Compiling for production `npx mix --production`
+  * Compiling for production `npx mix build`
 
 ## Futher reading
 
