@@ -1,20 +1,14 @@
-<!doctype html>
-<html class="bg-green-50" lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Mix Boilerplate</title>
-  <link rel="stylesheet" href="css/app.css">
-</head>
-<body class="flex justify-center items-center min-h-screen">
+{% extends "_base.html" %}
+
+{% block content %}
   <div class="sm:max-w-xl w-full py-6">
 
     <div class="bg-white shadow-md overflow-hidden
       sm:rounded-lg md:flex">
       <div class="relative pb-16x9 md:pb-0 md:w-2/5 js-gallery">
-        <a href="images/justyna-ziobrowska-orFGUQj4Nc4-unsplash.jpg" data-caption="Bavouille l'escargot">
+        <a href="img/justyna-ziobrowska-orFGUQj4Nc4-unsplash.jpg" data-caption="Bavouille l'escargot">
           <img class="absolute inset-0 h-full w-full rounded-none object-cover"
-            src="images/justyna-ziobrowska-orFGUQj4Nc4-unsplash.jpg" alt="Bavouille l'escargot">
+            src="img/justyna-ziobrowska-orFGUQj4Nc4-unsplash.jpg" alt="Bavouille l'escargot">
         </a>
       </div>
       <div class="p-6 space-y-4 md:w-3/5">
@@ -66,8 +60,4 @@
     </div>
 
   </div>
-
-  <script src="js/app.js"></script>
-</body>
-</html>
-
+{% endblock %}
