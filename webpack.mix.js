@@ -7,24 +7,25 @@ require('laravel-mix-nunjucks')
 
 mix
   .setPublicPath('dist/')
-  .js(['src/js/app.js'], 'js')
   .sass('src/css/app.scss', 'css')
-  .options({
-    processCssUrls: false,
-    terser: {
-      extractComments: false, // Stop Mix from generating license file
-    }
-  })
+  .js('src/js/app.js', 'js')
   .copyWatched('src/fonts/**/*.{woff,woff2}', 'dist/fonts')
+  .njk('src/templates/', 'dist/')
   .webpackConfig({
     plugins: [
       new CleanWebpackPlugin(),
     ]
   })
-  .njk('src/templates/', 'dist/')
+  .options({
+    processCssUrls: false,
+    terser: { extractComments: false } // Stop Mix from generating license file
+  })
+  .disableSuccessNotifications()
   .browserSync({
     server: 'dist/',
     files: [
+      'src/css/**/*.{css,scss}',
+      'src/js/**/*.js',
       'src/templates/**/*.html',
       'tailwind.config.js',
     ],
@@ -33,13 +34,6 @@ mix
 if (mix.inProduction()) {
   mix
     .version()
-    .then(() => {
-      const convertToFileHash = require('laravel-mix-make-file-hash')
-      convertToFileHash({
-        publicPath: "dist/",
-        manifestFilePath: "dist/mix-manifest.json"
-      })
-    })
     .webpackConfig({
       module: {
         rules: [
@@ -65,16 +59,7 @@ if (mix.inProduction()) {
               ['gifsicle'],
               ['mozjpeg', { quality: 50 }],
               ['pngquant', { quality: [0.5, 0.5] }],
-              [
-                'svgo',
-                {
-                  plugins: [
-                    {
-                      removeViewBox: false,
-                    },
-                  ],
-                },
-              ],
+              ['svgo', { plugins: [{ removeViewBox: false }] }],
             ],
           },
         }),
@@ -82,6 +67,5 @@ if (mix.inProduction()) {
     })
 }
 else {
-  mix.
-    copyWatched('src/images/**/*.{gif,jpg,png,svg,ico}', 'dist/images')
+  mix.copyWatched('src/images/**/*.{gif,jpg,png,svg,ico}', 'dist/images')
 }
