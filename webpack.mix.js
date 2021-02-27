@@ -38,7 +38,7 @@ if (mix.inProduction()) {
       module: {
         rules: [
           {
-            test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+            test: /\.(?:ico|gif|jpg|png|svg)$/i,
             type: 'asset/resource',
           },
         ],
@@ -47,7 +47,7 @@ if (mix.inProduction()) {
         new CopyPlugin({
           patterns: [
             {
-              from: '**/*.{gif,jpg,png,svg,ico}',
+              from: '**/*.{ico,gif,jpg,png,svg}',
               to: 'images',
               context: 'src/images',
             },
@@ -67,5 +67,5 @@ if (mix.inProduction()) {
     })
 }
 else {
-  mix.copyWatched('src/images/**/*.{gif,jpg,png,svg,ico}', 'dist/images')
+  mix.copyWatched('src/images/**/*.{ico,gif,jpg,png,svg}', 'dist/images')
 }
