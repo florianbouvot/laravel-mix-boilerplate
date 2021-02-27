@@ -10,17 +10,31 @@ mix
   .sass('src/css/app.scss', 'css')
   .js('src/js/app.js', 'js')
   .copyWatched('src/fonts/**/*.{woff,woff2}', 'dist/fonts')
-  .njk('src/templates/', 'dist/')
   .webpackConfig({
     plugins: [
       new CleanWebpackPlugin(),
-    ]
+      new CopyPlugin({
+        patterns: [
+          {
+            from: '**/*.{ico,gif,jpg,png,svg}',
+            to: 'img',
+            context: 'src/img',
+          },
+        ],
+      }),
+      new ImageMinimizerPlugin({
+        minimizerOptions: {
+          plugins: [
+            ['gifsicle'],
+            ['mozjpeg', { quality: 50 }],
+            ['pngquant', { quality: [0.5, 0.5] }],
+            ['svgo', { plugins: [{ removeViewBox: false }] }],
+          ],
+        },
+      }),
+    ],
   })
-  .options({
-    processCssUrls: false,
-    terser: { extractComments: false } // Stop Mix from generating license file
-  })
-  .disableSuccessNotifications()
+  .njk('src/templates/', 'dist/')
   .browserSync({
     server: 'dist/',
     files: [
@@ -30,42 +44,12 @@ mix
       'tailwind.config.js',
     ],
   })
+  .options({
+    processCssUrls: false,
+    terser: { extractComments: false } // Stop Mix from generating license file
+  })
+  .disableSuccessNotifications()
 
 if (mix.inProduction()) {
-  mix
-    .version()
-    .webpackConfig({
-      module: {
-        rules: [
-          {
-            test: /\.(?:ico|gif|jpg|png|svg)$/i,
-            type: 'asset/resource',
-          },
-        ],
-      },
-      plugins: [
-        new CopyPlugin({
-          patterns: [
-            {
-              from: '**/*.{ico,gif,jpg,png,svg}',
-              to: 'images',
-              context: 'src/images',
-            },
-          ],
-        }),
-        new ImageMinimizerPlugin({
-          minimizerOptions: {
-            plugins: [
-              ['gifsicle'],
-              ['mozjpeg', { quality: 50 }],
-              ['pngquant', { quality: [0.5, 0.5] }],
-              ['svgo', { plugins: [{ removeViewBox: false }] }],
-            ],
-          },
-        }),
-      ],
-    })
-}
-else {
-  mix.copyWatched('src/images/**/*.{ico,gif,jpg,png,svg}', 'dist/images')
+  mix.version()
 }
