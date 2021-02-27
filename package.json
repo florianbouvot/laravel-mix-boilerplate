@@ -1,7 +1,8 @@
 {
   "name": "laravel-mix-boilerplate",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "author": "Florian Bouvot <florian.bouvot@gmail.com>",
+  "license": "ISC",
   "scripts": {
     "dev": "mix",
     "watch": "mix watch",
@@ -9,8 +10,15 @@
     "hot": "mix watch --hot",
     "prod": "mix --production"
   },
-  "author": "Florian Bouvot <florian.bouvot@gmail.com>",
-  "license": "ISC",
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "alpinejs": "^2.8.1",
+    "baguettebox.js": "^1.11.1",
+    "scrollreveal": "^4.0.7",
+    "tailwindcss": "^2.0.3"
+  },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
     "browser-sync": "^2.26.14",
@@ -28,11 +36,5 @@
     "postcss": "^8.2.6",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1"
-  },
-  "dependencies": {
-    "alpinejs": "^2.8.1",
-    "baguettebox.js": "^1.11.1",
-    "scrollreveal": "^4.0.7",
-    "tailwindcss": "^2.0.3"
   }
 }
