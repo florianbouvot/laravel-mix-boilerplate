@@ -9,6 +9,15 @@ mix
   .setPublicPath('dist/')
   .sass('src/css/app.scss', 'css')
   .js('src/js/app.js', 'js')
+  .browserSync({
+    server: 'dist/',
+    files: [
+      'src/css/**/*.{css,scss}',
+      'src/js/**/*.js',
+      'src/templates/**/*.html',
+      'tailwind.config.js',
+    ],
+  })
   .copyWatched('src/fonts/**/*.{woff,woff2}', 'dist/fonts')
   .webpackConfig({
     plugins: [
@@ -35,15 +44,6 @@ mix
     ],
   })
   .njk('src/templates/', 'dist/')
-  .browserSync({
-    server: 'dist/',
-    files: [
-      'src/css/**/*.{css,scss}',
-      'src/js/**/*.js',
-      'src/templates/**/*.html',
-      'tailwind.config.js',
-    ],
-  })
   .options({
     processCssUrls: false,
     terser: { extractComments: false } // Stop Mix from generating license file
