@@ -7,8 +7,9 @@ require('laravel-mix-nunjucks')
 
 mix
   .setPublicPath('dist/')
-  .sass('src/css/app.scss', 'css')
   .js('src/js/app.js', 'js')
+  .sass('src/css/app.scss', 'css')
+  .njk('src/templates/', 'dist/')
   .browserSync({
     server: 'dist/',
     files: [
@@ -43,7 +44,6 @@ mix
       }),
     ],
   })
-  .njk('src/templates/', 'dist/')
   .options({
     processCssUrls: false,
     terser: { extractComments: false } // Stop Mix from generating license file
