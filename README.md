@@ -32,7 +32,7 @@ _Nunjunks templates are only present for the demo._
 3. Use Mix CLI:
   * Compiling in a Local Environment `npx mix`
   * Watch Assets for changes `npx mix watch`
-  * Compiling for production `npx mix prod`
+  * Compiling for production `npx mix --production`
 
 ## Futher reading
 
