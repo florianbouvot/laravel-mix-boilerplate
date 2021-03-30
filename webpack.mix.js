@@ -15,6 +15,8 @@ mix
     files: [
       'src/css/**/*.{css,scss}',
       'src/js/**/*.js',
+      'src/fonts/**/*.{woff,woff2}',
+      'src/img/**/*.{ico,gif,jpg,png,svg}',
       'src/templates/**/*.html',
       'tailwind.config.js',
     ],
