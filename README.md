@@ -6,9 +6,7 @@ A boilerplate for building web projects with Laravel Mix.
 
 * CSS
   * Sass compilation
-  * PostCSS transformation (Tailwindcss, Autoprefixer)
-  ~~* Remove unused CSS with PurgeCSS~~
-  * JIT (Just In Time aka ACSS) for Tailwindcss
+  * PostCSS transformation (Tailwindcss JIT, Autoprefixer)
   * Minify
   * File versioning for cache-busting (in production)
 * JavaScript
