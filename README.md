@@ -6,8 +6,7 @@ A boilerplate for building web projects with Laravel Mix.
 
 * CSS
   * Sass compilation
-  * PostCSS transformation (Tailwindcss, Autoprefixer)
-  * Remove unused CSS with PurgeCSS
+  * PostCSS transformation (Tailwindcss JIT, Autoprefixer)
   * Minify
   * File versioning for cache-busting (in production)
 * JavaScript
@@ -24,11 +23,6 @@ A boilerplate for building web projects with Laravel Mix.
 _Nunjunks templates are only present for the demo._
 
 ## Getting Started
-
-### Prerequisites
-
-Make sure these are installed first:
-* [Node.js](https://nodejs.org/)
 
 ### Quick Start
 

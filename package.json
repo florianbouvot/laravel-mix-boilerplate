@@ -1,7 +1,8 @@
 {
   "name": "laravel-mix-boilerplate",
-  "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
+  "author": "Florian Bouvot <florian.bouvot@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "dev": "mix",
     "watch": "mix watch",
@@ -9,29 +10,32 @@
     "hot": "mix watch --hot",
     "prod": "mix --production"
   },
-  "author": "Florian Bouvot <florian.bouvot@gmail.com>",
-  "license": "ISC",
+  "browserslist": [
+    "defaults"
+  ],
+  "dependencies": {
+    "@tailwindcss/jit": "^0.1.17",
+    "alpinejs": "^2.8.2",
+    "baguettebox.js": "^1.11.1",
+    "scrollreveal": "^4.0.9",
+    "tailwindcss": "^2.0.4"
+  },
   "devDependencies": {
-    "autoprefixer": "^10.2.4",
+    "autoprefixer": "^10.2.5",
     "browser-sync": "^2.26.14",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^8.0.0",
     "image-minimizer-webpack-plugin": "^2.2.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.1",
-    "imagemin-svgo": "^8.0.0",
+    "imagemin-pngquant": "^9.0.2",
+    "imagemin-svgo": "^9.0.0",
     "laravel-mix": "^6.0.13",
-    "laravel-mix-nunjucks": "^1.0.0",
-    "postcss": "^8.2.6",
+    "laravel-mix-copy-watched": "^2.3.0",
+    "laravel-mix-nunjucks": "^1.1.0",
+    "postcss": "^8.2.8",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1"
-  },
-  "dependencies": {
-    "alpinejs": "^2.8.1",
-    "baguettebox.js": "^1.11.1",
-    "scrollreveal": "^4.0.7",
-    "tailwindcss": "^2.0.3"
   }
 }
