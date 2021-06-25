@@ -1,6 +1,9 @@
-import 'alpinejs'
-import baguetteBox from 'baguettebox.js';
+import Alpine from 'alpinejs'
+import baguetteBox from 'baguettebox.js'
 import ScrollReveal from 'scrollreveal'
+
+window.Alpine = Alpine
+Alpine.start()
 
 baguetteBox.run('.js-gallery');
 
