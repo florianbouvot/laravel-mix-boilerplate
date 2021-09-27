@@ -14,13 +14,13 @@
     "defaults"
   ],
   "dependencies": {
-    "alpinejs": "^3.3.4",
+    "alpinejs": "^3.4.1",
     "baguettebox.js": "^1.11.1",
     "scrollreveal": "^4.0.9",
-    "tailwindcss": "^2.2.15"
+    "tailwindcss": "^2.2.16"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.4",
+    "autoprefixer": "^10.3.6",
     "browser-sync": "^2.27.5",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
@@ -33,8 +33,8 @@
     "laravel-mix": "^6.0.31",
     "laravel-mix-copy-watched": "^2.3.1",
     "laravel-mix-nunjucks": "^1.1.0",
-    "postcss": "^8.3.6",
-    "sass": "^1.41.1",
+    "postcss": "^8.3.8",
+    "sass": "^1.42.1",
     "sass-loader": "^12.1.0"
   }
 }
