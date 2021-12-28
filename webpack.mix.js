@@ -13,12 +13,12 @@ mix
   .browserSync({
     server: 'dist/',
     files: [
-      'src/css/**/*.{css,scss}',
-      'src/js/**/*.js',
+      //'src/css/**/*.{css,scss}',
+      //'src/js/**/*.js',
       'src/fonts/**/*.{woff,woff2}',
       'src/img/**/*.{ico,gif,jpg,png,svg}',
       'src/templates/**/*.html',
-      'tailwind.config.js',
+      //'tailwind.config.js',
     ],
   })
   .copyWatched('src/fonts/**/*.{woff,woff2}', 'dist/fonts')
@@ -35,13 +35,16 @@ mix
         ],
       }),
       new ImageMinimizerPlugin({
-        minimizerOptions: {
-          plugins: [
-            ['gifsicle'],
-            ['mozjpeg', { quality: 50 }],
-            ['pngquant', { quality: [0.5, 0.5] }],
-            ['svgo'],
-          ],
+        minimizer: {
+          implementation: ImageMinimizerPlugin.imageminMinify,
+          options: {
+            plugins: [
+              ['gifsicle'],
+              ['mozjpeg', { quality: 50 }],
+              ['pngquant', { quality: [0.5, 0.5] }],
+              ['svgo'],
+            ],
+          },
         },
       }),
     ],

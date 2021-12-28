@@ -14,27 +14,27 @@
     "defaults"
   ],
   "dependencies": {
-    "alpinejs": "^3.4.1",
+    "alpinejs": "^3.7.1",
     "baguettebox.js": "^1.11.1",
     "scrollreveal": "^4.0.9",
-    "tailwindcss": "^2.2.16"
+    "tailwindcss": "^3.0.7"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.6",
-    "browser-sync": "^2.27.5",
+    "autoprefixer": "^10.4.0",
+    "browser-sync": "^2.27.7",
     "browser-sync-webpack-plugin": "^2.3.0",
     "clean-webpack-plugin": "^4.0.0",
-    "copy-webpack-plugin": "^9.0.1",
-    "image-minimizer-webpack-plugin": "^2.2.0",
+    "copy-webpack-plugin": "^10.2.0",
+    "image-minimizer-webpack-plugin": "^3.2.0",
     "imagemin-gifsicle": "^7.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
-    "imagemin-svgo": "^9.0.0",
-    "laravel-mix": "^6.0.31",
+    "imagemin-svgo": "^10.0.1",
+    "laravel-mix": "^6.0.39",
     "laravel-mix-copy-watched": "^2.3.1",
     "laravel-mix-nunjucks": "^1.1.0",
-    "postcss": "^8.3.8",
-    "sass": "^1.42.1",
-    "sass-loader": "^12.1.0"
+    "postcss": "^8.4.5",
+    "sass": "^1.45.1",
+    "sass-loader": "^12.4.0"
   }
 }
