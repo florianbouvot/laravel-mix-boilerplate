@@ -18,6 +18,7 @@ mix
       'src/fonts/**/*.{woff,woff2}',
       'src/img/**/*.{ico,gif,jpg,png,svg}',
       'src/templates/**/*.html',
+      'dist/css/*.css',
       //'tailwind.config.js',
     ],
   })
